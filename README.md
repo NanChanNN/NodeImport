@@ -1,6 +1,6 @@
 # NodeInfl: Imbalanced Node Classification with Node Influence Assessment
 
-This repository is the official implementation of [NodeInfl: Imbalanced Node Classification with Node Influence Assessment].
+This repository is the official implementation of **NodeInfl: Imbalanced Node Classification with Node Influence Assessment**.
 
 ## Requirements
 
