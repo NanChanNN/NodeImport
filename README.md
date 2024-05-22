@@ -35,3 +35,6 @@ For instance, to run the model on the _Cora_ dataset with a _GCN_ backbone, an i
 ```sh
 ./run.sh Cora GCN 50 5 4
 ```
+
+## Acknowledgments
+The implementation of GNN backbones in the `nets` folder is adapted from [TAM](https://github.com/Jaeyun-Song/TAM). We thank the authors of TAM for their valuable contributions.
