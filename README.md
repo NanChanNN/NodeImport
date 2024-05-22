@@ -22,7 +22,7 @@ pip install -r requirements.txt
 - We use the built-in datasets from the [PyTorch Geometric package](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html).
 - Datasets will be downloaded into the default `data` folder upon first execution.
 
-## ## Running
+## Running
 
 Hyper-parameter configurations for all Dataset+GNN settings are available in the `run.sh` file. To run the model as described in the paper, specify the required hyper-parameters and run the following command:
 
