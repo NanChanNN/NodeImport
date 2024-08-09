@@ -1,6 +1,6 @@
-# NodeInfl: Imbalanced Node Classification with Node Influence Assessment
+# NodeImport: Imbalanced Node Classification with Node Importance Assessment
 
-This repository contains the official implementation of **NodeInfl: Imbalanced Node Classification with Node Influence Assessment**.
+This repository contains the official implementation of **NodeImport: Imbalanced Node Classification with Node Importance Assessment**.
 
 ## Overview
 
@@ -30,7 +30,7 @@ Hyper-parameter configurations for all Dataset+GNN settings are available in the
 ./run.sh [dataset] [GNN backbone] [imbalance ratio] [running times] [GPU device]
 ```
 
-For instance, to run the model on the _Cora_ dataset with a _GCN_ backbone, an imbalance ratio of _50_, for _5_ runs on GPU device 4, execute:
+For instance, to run the model on the _Cora_ dataset with a _GCN_ backbone, an imbalance ratio of _50_, for _5_ runs on GPU device _4_, execute:
 
 ```sh
 ./run.sh Cora GCN 50 5 4
