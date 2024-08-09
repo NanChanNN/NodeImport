@@ -3,7 +3,6 @@
 # make the script stop when error (non-true exit code) is occured
 set -e
 
-
 if [ $1 == 'computers' ] && [ $2 == 'GCN' ];
 then
     DATA='computers'
@@ -15,13 +14,13 @@ then
     EMB='SSGC'
     DEPTH=16
     ALPHA=0.20
-    S_SCALE=1.0
+    S_SCALE=2.0
     U_WARM=0
     U_DECAY=1000
     U_SCALE=1.0
-    KM_DEPTH=4
-    KM_ALPHA=0.10
-    KM_METRIC='manhattan'
+    KM_DEPTH=2
+    KM_ALPHA=0.15
+    KM_METRIC='euclidean'
     KM_METHOD='pam'
 elif [ $1 == 'computers' ] && [ $2 == 'GAT' ];
 then
@@ -34,13 +33,13 @@ then
     EMB='SSGC'
     DEPTH=16
     ALPHA=0.20
-    S_SCALE=1.0
+    S_SCALE=0.5
     U_WARM=0
     U_DECAY=1000
-    U_SCALE=1.0
-    KM_DEPTH=4
-    KM_ALPHA=0.10
-    KM_METRIC='manhattan'
+    U_SCALE=0.5
+    KM_DEPTH=2
+    KM_ALPHA=0.05
+    KM_METRIC='euclidean'
     KM_METHOD='pam'
 elif [ $1 == 'computers' ] && [ $2 == 'SAGE' ];
 then
@@ -48,8 +47,8 @@ then
     NET='SAGE'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=5
-    MDROP=0.0
+    MSize=6
+    MDROP=0.5
     EMB='APPNP'
     DEPTH=2
     ALPHA=0.05
@@ -72,7 +71,7 @@ then
     EMB='SSGC'
     DEPTH=4
     ALPHA=0.05
-    S_SCALE=1.0
+    S_SCALE=0.5
     U_WARM=0
     U_DECAY=1000
     U_SCALE=1.0
@@ -91,12 +90,12 @@ then
     EMB='APPNP'
     DEPTH=2
     ALPHA=0.20
-    S_SCALE=1.0
+    S_SCALE=0.5
     U_WARM=0
-    U_DECAY=1000
-    U_SCALE=1.0
+    U_DECAY=500
+    U_SCALE=0.5
     KM_DEPTH=4
-    KM_ALPHA=0.10
+    KM_ALPHA=0.15
     KM_METRIC='manhattan'
     KM_METHOD='pam'
 elif [ $1 == 'photo' ] && [ $2 == 'SAGE' ];
@@ -113,8 +112,8 @@ then
     S_SCALE=1.0
     U_SCALE=1.0
     U_DECAY=1000
-    KM_DEPTH=4
-    KM_ALPHA=0.10
+    KM_DEPTH=8
+    KM_ALPHA=0.15
     KM_METRIC='manhattan'
 elif [ $1 == 'Cora' ] && [ $2 == 'GCN' ];
 then
@@ -122,15 +121,15 @@ then
     NET='GCN'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=4
+    MSize=5
     MDROP=0.5
-    EMB='SSGC'
-    DEPTH=16
-    ALPHA=0.2
-    S_SCALE=1.5
+    EMB='APPNP'
+    DEPTH=8
+    ALPHA=0.10
+    S_SCALE=0.5
     U_WARM=0
     U_DECAY=1000
-    U_SCALE=1.0
+    U_SCALE=0.5
     KM_DEPTH=4
     KM_ALPHA=0.10
     KM_METRIC='manhattan'
@@ -141,17 +140,17 @@ then
     NET='GAT'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=3
+    MSize=4
     MDROP=0.5
-    EMB='APPNP'
-    DEPTH=8
-    ALPHA=0.2
-    S_SCALE=1.5
+    EMB='SSGC'
+    DEPTH=4
+    ALPHA=0.05
+    S_SCALE=1.0
     U_WARM=0
     U_DECAY=1000
-    U_SCALE=0.5
+    U_SCALE=1.0
     KM_DEPTH=4
-    KM_ALPHA=0.10
+    KM_ALPHA=0.05
     KM_METRIC='manhattan'
     KM_METHOD='pam'
 elif [ $1 == 'Cora' ] && [ $2 == 'SAGE' ];
@@ -163,15 +162,15 @@ then
     MSize=3
     MDROP=0.5
     EMB='SSGC'
-    DEPTH=4
+    DEPTH=16
     ALPHA=0.2
     S_SCALE=4.0
     U_WARM=0
-    U_DECAY=1000
+    U_DECAY=500
     U_SCALE=2.0
-    KM_DEPTH=8
+    KM_DEPTH=12
     KM_ALPHA=0.10
-    KM_METRIC='euclidean'
+    KM_METRIC='manhattan'
     KM_METHOD='pam'
 elif [ $1 == 'CiteSeer' ] && [ $2 == 'GCN' ];
 then
@@ -179,17 +178,17 @@ then
     NET='GCN'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=3
+    MSize=4
     MDROP=0.5
     EMB='APPNP'
     DEPTH=4
-    ALPHA=0.2
+    ALPHA=0.05
     S_SCALE=1.0
     U_WARM=0
-    U_DECAY=1000
-    U_SCALE=0.5
-    KM_DEPTH=16
-    KM_ALPHA=0.05
+    U_DECAY=2000
+    U_SCALE=1.0
+    KM_DEPTH=8
+    KM_ALPHA=0.2
     KM_METRIC='manhattan'
     KM_METHOD='pam'
 elif [ $1 == 'CiteSeer' ] && [ $2 == 'GAT' ];
@@ -201,14 +200,14 @@ then
     MSize=4
     MDROP=0.5
     EMB='APPNP'
-    DEPTH=16
+    DEPTH=8
     ALPHA=0.05
     S_SCALE=0.5
     U_WARM=0
     U_DECAY=1000
-    U_SCALE=0.5
-    KM_DEPTH=8
-    KM_ALPHA=0.05
+    U_SCALE=1.0
+    KM_DEPTH=12
+    KM_ALPHA=0.10
     KM_METRIC='euclidean'
     KM_METHOD='pam'
 elif [ $1 == 'CiteSeer' ] && [ $2 == 'SAGE' ];
@@ -219,10 +218,10 @@ then
     FEAT_DIM=256
     MSize=4
     MDROP=0.0
-    EMB='SSGC'
+    EMB='APPNP'
     DEPTH=2
-    ALPHA=0.1
-    S_SCALE=0.5
+    ALPHA=0.15
+    S_SCALE=1.0
     U_WARM=0
     U_DECAY=1000
     U_SCALE=0.5
@@ -236,18 +235,18 @@ then
     NET='GCN'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=4
+    MSize=15
     MDROP=0.5
     EMB='SSGC'
     DEPTH=4
-    ALPHA=0.2
+    ALPHA=0.15
     S_SCALE=0.5
     U_WARM=0
-    U_DECAY=1000
+    U_DECAY=2000
     U_SCALE=0.5
     KM_DEPTH=16
-    KM_ALPHA=0.15
-    KM_METRIC='manhattan'
+    KM_ALPHA=0.10
+    KM_METRIC='euclidean'
     KM_METHOD='pam'
 elif [ $1 == 'PubMed' ] && [ $2 == 'GAT' ];
 then
@@ -255,18 +254,18 @@ then
     NET='GAT'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=4
+    MSize=10
     MDROP=0.5
     EMB='APPNP'
-    DEPTH=4
-    ALPHA=0.05
+    DEPTH=8
+    ALPHA=0.20
     S_SCALE=0.5
     U_WARM=0
-    U_DECAY=1000
+    U_DECAY=2000
     U_SCALE=1.0
-    KM_DEPTH=8
-    KM_ALPHA=0.05
-    KM_METRIC='euclidean'
+    KM_DEPTH=4
+    KM_ALPHA=0.10
+    KM_METRIC='manhattan'
     KM_METHOD='pam'
 elif [ $1 == 'PubMed' ] && [ $2 == 'SAGE' ];
 then
@@ -274,18 +273,18 @@ then
     NET='SAGE'
     N_LAYER=2
     FEAT_DIM=256
-    MSize=10
+    MSize=15
     MDROP=0.5
     EMB='APPNP'
-    DEPTH=16
-    ALPHA=0.2
-    S_SCALE=1.0
+    DEPTH=4
+    ALPHA=0.15
+    S_SCALE=0.5
     U_WARM=0
-    U_DECAY=1000
+    U_DECAY=1500
     U_SCALE=1.0
-    KM_DEPTH=16
-    KM_ALPHA=0.10
-    KM_METRIC='manhattan'
+    KM_DEPTH=12
+    KM_ALPHA=0.05
+    KM_METRIC='euclidean'
     KM_METHOD='pam'
 else
     echo 'ERROR'
