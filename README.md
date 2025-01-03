@@ -1,6 +1,6 @@
 # NodeImport: Imbalanced Node Classification with Node Importance Assessment
 
-This repository contains the official implementation of **NodeImport: Imbalanced Node Classification with Node Importance Assessment**.
+This is the code for the KDD 2025 paper of NodeImport: **NodeImport: Imbalanced Node Classification with Node Importance Assessment**.
 
 ## Overview
 
@@ -38,3 +38,12 @@ For instance, to run the model on the _Cora_ dataset with a _GCN_ backbone, an i
 
 ## Acknowledgments
 The implementation of GNN backbones in the `nets` folder is adapted from [TAM](https://github.com/Jaeyun-Song/TAM). We thank the authors of TAM for their valuable contributions.
+
+## Citation
+If you find our work useful, please cite:
+
+```
+Nan Chen, Zemin Liu, Bryan Hooi, Bingsheng He, Jun Hu, and Jia Chen. 2025. NodeImport: Imbalanced Node Classification with Node Importance Assessment. In Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1 (KDD ’25), August 3–7, 2025, Toronto, ON, Canada. ACM, New York, NY, USA, 12 pages. https://doi.org/10.1145/3690624.3709215
+```
+
+Feel free to contact nanchansysu@gmail.com if you have any questions.
